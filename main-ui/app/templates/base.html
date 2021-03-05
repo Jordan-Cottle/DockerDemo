@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Docker containers as a service demo">
+    <title>Docker Demo</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+
+<body>
+    <h1>Docker Demo</h1>
+    <ul class="nav">
+        {% block navigation %}
+        <li><a href="{{ url_for('welcome') }}">Welcome</a></li>
+        {% if not current_user.is_authenticated %}
+        <li><a href="{{ url_for('user_login') }}">Login</a></li>
+        {% else %}
+        <li><a href="{{ url_for('containers_view') }}">Containers</a></li>
+        {% endif %}
+        {% endblock navigation %}
+    </ul>
+
+    {% if current_user.is_authenticated %}
+    <h2>Welcome back, {{ current_user.name }}</h2>
+    {% endif %}
+
+    {% block body %}
+    {% endblock %}
+</body>
+
+</html>

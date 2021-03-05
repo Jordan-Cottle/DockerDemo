@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+<table>
+    <thead>
+        <tr>
+            <th>Container Name</th>
+            <th>Container User</th>
+            <th>Container Address</th>
+            <th>Private Key</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for container in containers %}
+        <tr>
+            <td>{{container.container_name}}</td>
+            <td>{{container.user_name}}</td>
+            <td>{{container.address}}</td>
+            <td><a href="{{ url_for('container_view', container_name=container.container_name) }}">Get Key</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ url_for('create_container') }}">Create New Container</a>
+{% endblock body %}

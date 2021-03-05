@@ -1,0 +1,17 @@
+version: '2'
+services:
+  container_manager:
+    container_name: container_manager
+    image: container_manager
+    build: .
+    ports:
+      - "3232:3232"
+    volumes:
+      - /home/ubuntu/DockerDemo/container_manager/keys:/container/keys:z
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - demo-net
+    privileged: true
+networks:
+  demo-net:
+    external: true

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p>Address: {{container.address}}</p>
+<p>User: {{container.user_name}}</p>
+<p>SSH-Key:</p>
+<textarea rows="40" cols="75" readonly="true">
+{{container.key}}
+</textarea>
+
+{% endblock body %}

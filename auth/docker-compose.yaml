@@ -1,0 +1,15 @@
+version: '2'
+services:
+  auth:
+    container_name: auth_app.demo
+    image: auth
+    build: .
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/auth_app/data:z
+    networks:
+      - demo-net
+networks:
+  demo-net:
+    external: true

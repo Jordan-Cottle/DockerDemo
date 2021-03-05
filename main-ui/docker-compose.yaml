@@ -1,0 +1,15 @@
+version: '2'
+services:
+  demo_ui:
+    container_name: ui.demo
+    image: demo_ui
+    build: .
+    ports:
+      - "1234:1234"
+    networks:
+      - demo-net
+      - host
+networks:
+  demo-net:
+    external: true
+  host:

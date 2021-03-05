@@ -1,0 +1,36 @@
+body {
+    padding: 30px 30px;
+    font-size:medium;
+}
+
+h1{
+    color:rgb(88, 172, 250);
+    font-size:3em;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    background-color: #4182c7;
+}
+
+ul.nav li {
+    float: left;
+}
+
+ul.nav li a {
+    display: block;
+    color:rgb(28, 3, 143);
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+ul.nav li a:hover {
+    background-color:rgb(130, 173, 230);
+}
+

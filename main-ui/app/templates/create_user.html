@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form class="login_form" action="{{ url_for('user_registration') }}" method="post">
+    <p><label class="login_label">Username</label></p>
+    <p><input class="login_input" type="text" name="user_name" placeholder="username" /></p>
+    <p><label class="login_label">Password</label></p>
+    <p><input class="login_input" type="password" name="password" placeholder="password" /></p>
+    <p><input class="login_input" type="submit" value="Sign Up" /></p>
+</form>
+{% endblock body %}
